@@ -1,2 +1,15 @@
 <h1>Welcome to the David Sample App</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<% if user_signed_in? %>
+	<%= link_to "edit", edit_user_registration_path %>
+<% else %>
+	<div class="jumbotron">
+		<div class="container">
+		  <h1>Hello, world!</h1>
+		  <%= %>
+		  <%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-lg" %>
+		  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+			
+		 </div>
+	</div>		
+<% end %>
