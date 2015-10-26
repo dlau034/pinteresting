@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.0.0'
 
 # Add Bootstrap https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass'
