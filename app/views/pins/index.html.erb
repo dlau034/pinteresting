@@ -9,6 +9,7 @@
 <table class="table table-hover table-striped table-bordered">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Description</th>
       <th>ID</th>
       <th>Email</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @pins.each do |pin| %>
       <tr>
+        <td><img src="<%= pin.image.url(:medium) %>" class="img-rounded" alt=""></td>        
         <td><%= pin.description %></td>        
         <td><%= pin.user_id %></td>             
         <td><%= pin.user.email if pin.user %>
@@ -26,6 +28,7 @@
 
         <td>
           <%= link_to 'Show', pin, class: "btn btn-info btn-xs" %>
+
         <% if pin.user == current_user %>
           <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-warning btn-xs"  %>          
           <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs"  %>
